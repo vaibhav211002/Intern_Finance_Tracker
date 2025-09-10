@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import AddTransaction from "./pages/AddTransaction";
-import EditTransaction from "./pages/EditTransaction";
-import DeleteTransaction from "./pages/DeleteTransaction";
+import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
+import AddTransaction from "./Pages/AddTransaction";
+import EditTransaction from "./Pages/EditTransaction";
+import DeleteTransaction from "./Pages/DeleteTransaction";
 import Register from "./Pages/Register.jsx";
 import ProtectedRoute from "./components/ProtectedRoute";
 
