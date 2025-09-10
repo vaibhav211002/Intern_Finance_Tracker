@@ -15,7 +15,7 @@ function App() {
     window.location.href = "/login";
   };
 
-  const isLoggedIn = !!localStorage.getItem("ft_token");
+const isLoggedIn = !!localStorage.getItem("ft_token");
 
   return (
     <div style={{ maxWidth: 900, margin: "0 auto", padding: 20 }}>
@@ -48,6 +48,9 @@ function App() {
         } />
         <Route path="/:id/delete" element={
           <ProtectedRoute><DeleteTransaction /></ProtectedRoute>
+        } />
+        <Route path="/*" element={
+          <div>404 Not Found</div>
         } />
       </Routes>
     </div>

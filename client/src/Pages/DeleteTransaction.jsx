@@ -13,7 +13,7 @@ export default function DeleteTransaction() {
         return;
       }
       try {
-        await api.delete(`/transactions/${id}`);
+        await api.delete(`/api/transactions/${id}`);
         navigate("/");
       } catch (err) {
         console.error(err);
