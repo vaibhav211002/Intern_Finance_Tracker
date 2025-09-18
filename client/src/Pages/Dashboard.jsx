@@ -33,8 +33,28 @@ export default function Dashboard() {
   };
 
   const total = txns.reduce((s, t) => s + Number(t.amount), 0);
+  const logout = () => {
+    localStorage.removeItem("ft_token");
+    window.location.href = "/login";
+  };
+  const isLoggedIn = !!localStorage.getItem("ft_token");
+
+
 
   return (
+    <>
+    <nav>
+          {isLoggedIn ? (
+            <>
+              <Link to="/" style={{ marginRight: 12 }}>Dashboard</Link>
+              <Link to="/add" style={{ marginRight: 12 }}>Add</Link>
+              <button onClick={logout}>Logout</button>
+            </>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
+        </nav>
+    
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
@@ -295,5 +315,6 @@ export default function Dashboard() {
         )}
       </div>
     </div>
+    </>
   );
 }

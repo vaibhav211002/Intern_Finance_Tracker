@@ -10,28 +10,12 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 
 function App() {
-  const logout = () => {
-    localStorage.removeItem("ft_token");
-    window.location.href = "/login";
-  };
 
-const isLoggedIn = !!localStorage.getItem("ft_token");
 
   return (
     <div style={{ maxWidth: 900, margin: "0 auto", padding: 20 }}>
       <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
         <h1 style={{ margin: 0 }}>Finance Tracker</h1>
-        <nav>
-          {isLoggedIn ? (
-            <>
-              <Link to="/" style={{ marginRight: 12 }}>Dashboard</Link>
-              <Link to="/add" style={{ marginRight: 12 }}>Add</Link>
-              <button onClick={logout}>Logout</button>
-            </>
-          ) : (
-            <Link to="/login">Login</Link>
-          )}
-        </nav>
       </header>
 
       <Routes>
