@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: ["http://localhost:5174", "https://intern-finance-tracker.vercel.app"], // allowed origins
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"], // allowed headers
+    allowedHeaders: ["Content-Type", "Authorization"], // allowed headers
     credentials: true, // allow cookies & auth headers
   })
 );
