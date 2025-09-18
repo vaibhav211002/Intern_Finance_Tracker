@@ -10,7 +10,14 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5174", "https://intern-finance-tracker.vercel.app"], // allowed origins
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // allowed HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"], // allowed headers
+    credentials: true, // allow cookies & auth headers
+  })
+);
 app.use(express.json());
 app.use(morgan("dev"));
 
